@@ -1,0 +1,46 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success alert-dismissible fade show px-4" role="alert">
+    <%= notice %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Tasks</h1>
+    </div>
+    <div class="col-md-6 text-right">
+      <%= link_to "New task", new_task_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% if @tasks.any? %>
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td class="<%= task.completed? ? 'completed-task' : '' %>"><%= task.title %></td>
+            <td class="<%= task.completed? ? 'completed-task' : '' %>"><%= task.description %></td>
+            <td><%= task.completed? ? "Completed" : "Pending" %></td>
+
+            <td>
+              <div class="d-flex">
+                <%= link_to "Show", task, class: "btn btn-info btn-sm" %>
+                <%= link_to "Edit", edit_task_path(task), class: "btn btn-primary btn-sm mx-2" %>
+                <%= button_to "Destroy", task, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
