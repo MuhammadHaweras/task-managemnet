@@ -13,9 +13,8 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light justify-content-between px-2">
-      <a class="navbar-brand">Task Management</a>
-      
+    <nav class="navbar navbar-light bg-primary justify-content-between px-2">
+      <%= link_to "Task Management", tasks_path, class: "navbar-brand text-white font-bold" %>
         <% if user_signed_in? %>
           <div class="d-flex align-items-center py-2">
             <p class="me-3 mb-0">Welcome, <%= current_user.email %></p>
@@ -27,7 +26,7 @@
             ) %>
           </div>
         <% else %>
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary my-2" %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-warning my-2" %>
         <% end %>
     </nav>
     <div class="container">
