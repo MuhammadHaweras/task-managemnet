@@ -17,7 +17,7 @@
       <%= link_to "Task Management", tasks_path, class: "navbar-brand text-white font-bold" %>
         <% if user_signed_in? %>
           <div class="d-flex align-items-center py-2">
-            <p class="me-3 mb-0">Welcome, <%= current_user.email %></p>
+            <p class="me-3 mb-0 text-white">Welcome, <%= current_user.email %></p>
             <%= button_to(
               "Log Out",
               destroy_user_session_path,
@@ -29,8 +29,6 @@
           <%= link_to "Sign in", new_user_session_path, class: "btn btn-warning my-2" %>
         <% end %>
     </nav>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
