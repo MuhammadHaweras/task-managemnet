@@ -1,10 +1,10 @@
 # README
 
-This app is build in Ruby on Rails, frontednd is created with rails views(html, css, bootstrap), database used is MySQL.
+This app is build in Ruby on Rails, frontend is created with rails views(html, css, bootstrap), database used is MySQL.
 
 Features covered in app:
 
-* Get List of all records, CRUD operations of records
+* Get List of all records, CRUD operations of records.
 
 * Authentiction: User can sign up, sign in, logout. User must sign in to create, update or delete a record. User can only see list of records and read a particular reord without sgning in.
 
