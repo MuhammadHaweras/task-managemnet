@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is build in Ruby on Rails, frontednd is create with rails views(html, css, bootstrap), database used is MySQL.
 
-Things you may want to cover:
+Features covered in app:
 
-* Ruby version
+* Get List of all records, CRUD operations of records
 
-* System dependencies
+* Authentiction: User can sign up, sign in, logout. User must sign in to create, update or delete a record. User can only see list of records and read a particular reord without sgning in.
 
-* Configuration
+* Form Validations: User has to enter title and description of task in order to create it. 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Authentication Validation: User can not create account with same emails, password length must be atleast 6 characters long, password and confirm password must match.
