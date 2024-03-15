@@ -12,7 +12,26 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container">
-    <%= yield %>
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-between px-2">
+      <a class="navbar-brand">Task Management</a>
+      
+        <% if user_signed_in? %>
+          <div class="d-flex align-items-center py-2">
+            <p class="me-3 mb-0">Welcome, <%= current_user.email %></p>
+            <%= button_to(
+              "Log Out",
+              destroy_user_session_path,
+              method: :delete,
+              class: "btn btn-danger"
+            ) %>
+          </div>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary my-2" %>
+        <% end %>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
