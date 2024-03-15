@@ -1,6 +1,6 @@
 # README
 
-This app is build in Ruby on Rails, frontednd is create with rails views(html, css, bootstrap), database used is MySQL.
+This app is build in Ruby on Rails, frontednd is created with rails views(html, css, bootstrap), database used is MySQL.
 
 Features covered in app:
 
